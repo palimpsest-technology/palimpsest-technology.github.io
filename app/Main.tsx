@@ -516,111 +516,26 @@ export default function Home({
 }) {
   return (
     <>
-      <div className="mb-0 space-y-2 pb-0 pr-4 pt-4 text-sm lowercase tracking-tight text-black dark:text-gray-100 md:space-y-8">
+      <div className="mb-0 space-y-2 pb-0 pr-4 pt-4 text-sm tracking-tight text-black md:space-y-8">
         <h1 className="sticky top-0 w-14 pt-2 font-black xl:w-28">{siteMetadata.title} </h1>
         <p>{siteMetadata.description}</p>
-        <p>
-          <Link href="https://docs.google.com/document/d/1WFXyfm1MaXvMnvt22WxjTEFSI5Q9_H6R_vDjJCU6Yyw/edit?usp=sharing">
-            [CV]
-          </Link>
-        </p>
 
-        <div className="py-12 pr-12 dark:text-yellow-300 xl:pr-32">
-          <h2 className=" top-0 pb-6 pt-1 text-xl">News</h2>
+        <div className="py-12">
+          <h2 className=" top-0 pb-6 pt-1 text-xl">
+            {'Palimpsest Technology'.split('').map((char, i, arr) => (
+              <span
+                key={i}
+                className="animate-wave-bold inline"
+                style={{
+                  animationDelay: `${i * 1}s`,
+                  animationDuration: `${arr.length * 1}s`,
+                }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
+          </h2>
           <News />
-        </div>
-
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Papers </SectionHeader>
-          <ul className="dark:text-gray-100">
-            {!papers.length && 'No papers found.'}
-            {papers.slice(0, MAX_DISPLAY).map((post) => {
-              return PaperItem(post)
-            })}
-          </ul>
-        </div>
-
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Posters & Demos </SectionHeader>
-          <ul className=" dark:text-gray-100">
-            {!posterdemos.length && 'No papers found.'}
-            {posterdemos.slice(0, MAX_DISPLAY).map((post) => {
-              return PosterDemoItem(post)
-            })}
-          </ul>
-        </div>
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Presentations </SectionHeader>
-          <ul className=" dark:text-gray-100">
-            {!presentations.length && 'No papers found.'}
-            {presentations.slice(0, MAX_DISPLAY).map((post) => {
-              return PresentationItem(post)
-            })}
-          </ul>
-        </div>
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Unpublished Works </SectionHeader>
-          <ul className=" dark:text-gray-100">
-            {!unpublished.length && 'No papers found.'}
-            {unpublished.slice(0, MAX_DISPLAY).map((post) => {
-              return UnpublishedItem(post)
-            })}
-          </ul>
-        </div>
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Artworks </SectionHeader>
-          <ul className=" dark:text-gray-100">
-            {!artworks.length && 'No papers found.'}
-            {artworks.slice(0, MAX_DISPLAY).map((post) => {
-              return ArtworkItem(post)
-            })}
-          </ul>
-        </div>
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Technical Contributions for Artworks </SectionHeader>
-          <ul className=" dark:text-gray-100">
-            {!technicals.length && 'No papers found.'}
-            {technicals.slice(0, MAX_DISPLAY).map((post) => {
-              return TechnicalItem(post)
-            })}
-          </ul>
-        </div>
-        <div className="pl-20 xl:pl-32">
-          <SectionHeader> Others </SectionHeader>
-          <ul className=" dark:text-gray-100">
-            {!others.length && 'No papers found.'}
-            {others.slice(0, MAX_DISPLAY).map((post) => {
-              return OtherItem(post)
-            })}
-          </ul>
-        </div>
-
-        <div>
-          <div className="h-64"></div>
-          <div className="sticky bottom-8">
-            <h1 className="w-14 pt-2 font-black xl:w-28">contact </h1>
-            <ul className="">
-              <li>
-                {' '}
-                mail: <a href="mailto:hyunchul.kim@kaist.ac.kr">hyunchul.kim@kaist.ac.kr</a> or{' '}
-                <a href="mailto:mail@hyunchul.kim">mail@hyunchul.kim </a>
-              </li>
-              <li>
-                {' '}
-                <a href="https://www.linkedin.com/in/hynchl">
-                  linkedin: www.linkedin.com/in/hynchl{' '}
-                </a>{' '}
-              </li>
-              <li>
-                {' '}
-                <a href="https://instagram.com/hynchl"> instagram: hynchl </a>{' '}
-              </li>
-              <li>
-                {' '}
-                <a href="https://x.com/kimhynchl"> twitter: kimhynchl </a>{' '}
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </>

@@ -58,3 +58,22 @@ input:-webkit-autofill:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
+@keyframes wave-bold {
+  0% {
+    font-weight: 400;
+  }
+  2% {
+    font-weight: 700;
+  }
+  4% {
+    font-weight: 400;
+  }
+  100% {
+    font-weight: 400;
+  }
+}
+
+.animate-wave-bold {
+  animation: wave-bold 1.5s ease-in-out infinite;
+}
